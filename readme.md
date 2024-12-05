@@ -1,5 +1,17 @@
 # Projeto Consulta
 
+## Estrutura Básica
+
+Uma classe deve ser declarada da seguinte forma:
+
+```java
+package modelo; // Nome da pasta 
+
+public class Inquilino { // Nome do arquivo e da classe
+    // Definição de atributos e métodos
+}
+```
+
 ## Sintaxe Padrão
 
 A sintaxe para implementação das classes segue este padrão:
@@ -23,7 +35,16 @@ public void setNome(String nome) {
     this.nome = nome;
 }
 ```
+// Retorno do tipo Void implica em nenhum retorno, serve para fazer alterações sem a necessidade de retornar algo.
 // Este método recebe 'nome' como variável e a atribui à classe com o 'this', que representa a instância atual da classe.
+
+### Exemplo de Método de Retorno
+
+```java
+public String getNome() {
+    return nome; // Valor acessado de dentro do objeto, conseguindo acessar valores privados da classe
+}
+```
 
 ### Exemplo de Uso
 
@@ -101,3 +122,37 @@ public class ApartamentoTipoB extends Apartamento {
 private Apartamento apartamento;
 ```
 
+Estrutura de manipulação dos valores em lista
+
+    public void addApartamento(Apartamento apartamento) {
+        apartamentos.add(apartamento);
+    }
+
+    // recebe o objeto apartamento e adiciona na lista de apartamentos
+
+    public void removeApartamento(Apartamento apartamento){
+        apartamentos.remove(apartamento);
+    }
+
+    // recebe o objeto apartamento e remove da lista de apartamentos
+
+Estrutura de itens individuais
+
+    public void setInquilino(Inquilino inquilino) {
+        this.inquilino = inquilino;
+        inquilino.setApartamento(this);
+    }
+
+    // adiciona inquilo ao valor do predio e chama a função setApartamento passando apartamento como parametro
+
+    public void setApartamento(Apartamento apartamento) {
+        this.apartamento = apartamento;
+    }
+
+    // dentro de inquilino adiciona apartamento ao inquilino
+
+    public void removeInquilino(){
+        this.inquilino = null;
+    }
+
+    // atribui null ao valor inquilino

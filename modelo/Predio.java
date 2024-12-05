@@ -3,6 +3,8 @@ package modelo;
 import java.util.ArrayList;
 import java.util.List;
 
+// Empresa -> Aviao-> Passageiro
+
 public class Predio {
     private String nome;
     private List<Apartamento> apartamentos;
@@ -22,5 +24,9 @@ public class Predio {
 
     public void addApartamento(Apartamento apartamento) {
         apartamentos.add(apartamento);
+    }
+
+    public void removeApartamento(Apartamento apartamento){
+        apartamentos.remove(apartamento);
     }
 }

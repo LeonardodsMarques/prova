@@ -7,10 +7,6 @@ public class Apartamento {
     private Predio predio;
     private Inquilino inquilino;
 
-    public Apartamento(int numero, int andar) {
-        this.numero = numero;
-        this.andar = andar;
-    }
 
     public Apartamento(int numero, int andar, double aluguel) {
         this.numero = numero;
@@ -59,8 +55,16 @@ public class Apartamento {
         inquilino.setApartamento(this);
     }
 
+    public void removeInquilino(){
+        this.inquilino = null;
+    }
+
     public void setPredio(Predio predio) {
         this.predio = predio;
         predio.addApartamento(this);
+    }
+
+    public void removePredio(){
+        this.predio = null;
     }
 }

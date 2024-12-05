@@ -8,6 +8,11 @@ public class Inquilino {
         this.nome = nome;
     }
 
+    public Inquilino(String nome, Apartamento apartamento){
+        this.nome = nome;
+        this.apartamento = apartamento;
+    }
+
     public void setApartamento(Apartamento apartamento) {
         this.apartamento = apartamento;
     }
